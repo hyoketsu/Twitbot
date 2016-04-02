@@ -1,11 +1,11 @@
 //Twitbot v2.5.0
 
-var CONSUMER_KEY = '1ELVdOc3WnJXbiPnCpbwREUjK';
-var CONSUMER_SECRET = '7V3IIHi04MjA0gnOrz00t4bSjCYzpMGbNbthRWfBXOnzMNdR7R';
-var PROJECT_KEY = 'MMtBx27KE97A0Crmsvb4qhoikr0-o8bp5';
+var CONSUMER_KEY = '...';
+var CONSUMER_SECRET = '...';
+var PROJECT_KEY = '...';
 
 var twitterService = getTwitterService();
-var sheet = SpreadsheetApp.getActive().getSheetByName('status');
+var sheet = SpreadsheetApp.getActive().getSheetByName('シート1');
 
 function twitter() {
   var service = getTwitterService();
@@ -193,7 +193,7 @@ function weather(content) {
 function keyword(id,text) {
   text = text.replace(/[\x00-\x7F]/g,'');
   var dialogue_options = {
-    'app_id': '1085eacd59f6de2e030babda94c4d7d8f2a0be6fe22cb4c8cd79fa014a254e0d',
+    'app_id': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     'title': ' ',
     'body': '\'' + text + '\''
   };
@@ -234,7 +234,7 @@ function dialogue(text) {
     'payload': JSON.stringify(dialogue_options),
     muteHttpExceptions:true
   };
-  var response = UrlFetchApp.fetch('https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?APIKEY=69744634675a536375425554464e42633973564f526a66756d3572394d7466646d736d6d63332f624c5443', options);
+  var response = UrlFetchApp.fetch('https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?APIKEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', options);
   var content  = JSON.parse(response.getContentText());
   var status = content['utt'];
   return status;
